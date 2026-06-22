@@ -1,10 +1,5 @@
 # Prompt History
 
-A chronological record of the prompts I (the user) gave during this session,
-plus the answers I selected for the multiple-choice questions the assistant
-posed (during planning and during setup). Terminal snippets I referenced are
-summarized in brackets.
-
 ---
 
 ## Phase 1 — Planning (Plan Mode)
@@ -35,6 +30,7 @@ summarized in brackets.
 
 **Q1. How should the "standardized but dynamic" output schema + frontend rendering work?**
 Options:
+
 - (a) Custom JSON "widget spec" validated by Pydantic, rendered by a generic React component using Recharts *(Recommended)*
 - (b) Adopt Vega-Lite specs as the standardized schema
 - (c) Custom widget spec for metrics/tables + Vega-Lite for charts (hybrid)
@@ -43,6 +39,7 @@ Options:
 
 **Q2. What build scope should the plan target?**
 Options:
+
 - (a) Full vertical prototype: Dockerized PostgreSQL + FastAPI agent + React dashboard + eval harness + observability *(Recommended)*
 - (b) Backend slice only (no React GUI)
 - (c) Thin backend + polished React dashboard emphasis
@@ -74,6 +71,7 @@ Options:
 
 **Question the assistant posed:** Given Docker/Node/API key weren't installed, how do you want to get to a usable web app?
 Options:
+
 - (a) Add a no-install offline demo (SQLite + mock agent + no-build React)
 - (b) Offline DB + no-build frontend, but use the real Claude agent
 - (c) I'll install the real stack myself (Docker + Node + API key) — just give exact PowerShell steps
@@ -113,6 +111,7 @@ Options:
 **Questions the assistant posed (and my answers):**
 
 **Q1. What should the new repo contain?**
+
 - (a) Only `dashboard-agent/` *(Recommended)*
 - (b) The entire workspace
 - (c) `dashboard-agent/` + assignment & whiteboard files (not the prior take-home)
@@ -120,18 +119,20 @@ Options:
 **My answer: (b) The entire workspace.**
 
 **Q2. Private or public?**
+
 - (a) Private *(Recommended)*
 - (b) Public
 
 **My answer: (b) Public.**
 
 **Q3. Repository name?**
+
 - (a) `dashboard-agent` *(Recommended)*
 - (b) `custom-dashboard-agent`
 
 **My answer: (b) `custom-dashboard-agent`.**
 
-*(Result: pushed to https://github.com/m-ukund/custom-dashboard-agent — public, 80 files, branch `main`.)*
+*(Result: pushed to [https://github.com/m-ukund/custom-dashboard-agent](https://github.com/m-ukund/custom-dashboard-agent) — public, 80 files, branch `main`.)*
 
 ---
 
@@ -140,3 +141,4 @@ Options:
 ### Prompt 9 — Create prompt history
 
 > Could you please create a document with my prompt history? Include any responses to questions that Claude posed in the plan.
+
