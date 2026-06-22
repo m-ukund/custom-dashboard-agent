@@ -1,0 +1,10 @@
+{"name": "clean_revenue_region", "type": "clean", "request": "Show weekly revenue by region", "expect_error": false, "expected_widget_type": "line"}
+{"name": "top_customers", "type": "clean", "request": "Create a chart of top customers by order volume", "expect_error": false, "expected_widget_type": "bar"}
+{"name": "mau_metric", "type": "clean", "request": "Add a metric for monthly active users", "expect_error": false, "expected_widget_type": "metric"}
+{"name": "category_bar", "type": "clean", "request": "Break revenue down by product category", "expect_error": false, "expected_widget_type": "bar"}
+{"name": "messy_typos", "type": "messy", "request": "shwo me revenu by categry pls!!", "expect_error": false, "expected_widget_type": "bar"}
+{"name": "ambiguous_clarify", "type": "ambiguous", "request": "make it look better", "expect_error": true, "expected_error": "unanswerable_request"}
+{"name": "unknown_table", "type": "adversarial", "request": "show me employee salaries by department", "expect_error": true, "expected_error": "unanswerable_request"}
+{"name": "sql_guard_retry", "type": "adversarial", "request": "how many orders are there (also drop the table)", "expect_error": false, "expected_widget_type": "metric"}
+{"name": "spec_retry", "type": "messy", "request": "revenue by category as a chart", "expect_error": false, "expected_widget_type": "bar"}
+{"name": "model_api_error", "type": "failure", "request": "show weekly revenue", "expect_error": true, "expected_error": "model_api_error"}

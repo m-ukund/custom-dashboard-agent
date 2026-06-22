@@ -1,0 +1,15 @@
+{
+  "request": {
+    "receipt_text": "Uber Eats       $34.20\nAWS invoice     $412.00\nOffice Depot    $28.50\nDelta Airlines  $890.00"
+  },
+  "response": {
+    "items": [
+      { "item": "Uber Eats", "amount": 34.2, "category": "meals" },
+      { "item": "AWS invoice", "amount": 412.0, "category": "software" },
+      { "item": "Office Depot", "amount": 28.5, "category": "office_supplies" },
+      { "item": "Delta Airlines", "amount": 890.0, "category": "travel" }
+    ],
+    "request_id": "1e1b7e282012"
+  },
+  "note": "Captured from a live run against claude-sonnet-4-6 via parse_receipt(). Categories are constrained to the valid enum and amounts are validated numbers."
+}

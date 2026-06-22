@@ -1,0 +1,4 @@
+Uber Eats       $34.20
+AWS invoice     $412.00
+Office Depot    $28.50
+Delta Airlines  $890.00

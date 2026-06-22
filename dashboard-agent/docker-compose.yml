@@ -1,0 +1,31 @@
+# Local PostgreSQL for the Custom Dashboard Agent.
+#
+#   docker compose up -d
+#
+# On first start, Postgres runs everything in /docker-entrypoint-initdb.d in
+# alphabetical order: 01_schema.sql creates the tables, 02_roles.sql creates
+# the read-only role the agent uses. Generated row data is loaded afterwards
+# with `python db/seed.py` (Python isn't available inside the postgres image).
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: dashboard-postgres
+    environment:
+      POSTGRES_DB: dashboard
+      POSTGRES_USER: dashboard_owner
+      POSTGRES_PASSWORD: owner_pw
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./db/roles.sql:/docker-entrypoint-initdb.d/02_roles.sql:ro
+      - dashboard_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dashboard_owner -d dashboard"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  dashboard_pgdata:
